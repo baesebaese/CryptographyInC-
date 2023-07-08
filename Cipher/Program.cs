@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cipher.Substitution_Cipher;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,42 +12,14 @@ namespace Cipher
     {
         static void Main(string[] args)
         {
+            // 시저 암호
+            CaesarCipher caesarCipher = new CaesarCipher();
+            var encryptStr = caesarCipher.Encrypt("HELLO");
+            var decryptStr = caesarCipher.Decrypt(encryptStr);
 
-            Console.WriteLine("Hello world");
+            Console.WriteLine("암호화:" + encryptStr);
+            Console.WriteLine("복호화:" + decryptStr);
         }
 
-        public Dictionary<string, string>  makeCodebook()
-        {
-            var decbook = new Dictionary<string, string>() {
-                { "5", "a"},
-                { "2", "b"},
-                { "#", "d"},
-                { "8", "e"},
-                { "1", "f"},
-                { "3", "g"},
-                { "4", "h"},
-                { "6", "i"},
-                { "0", "l"},
-                { "9", "m"},
-                { "*", "n"},
-                { "%", "o"},
-                { "=", "p"},
-                { "(", "r"},
-                { ")", "s"},
-                { ";", "t"},
-                { "?", "u"},
-                { "@", "v"},
-                { ":", "fy"},
-                { "7", " "}
-            };
-
-            var encbook = new Dictionary<string, string>();
-
-            foreach (KeyValuePair<string, string> item in decbook) {
-                encbook.Add(item.Value, item.Key);
-            }
-
-            return encbook;
-        }
     }
 }
