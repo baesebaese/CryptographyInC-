@@ -17,8 +17,14 @@ namespace Cipher
             var encryptStr = caesarCipher.Encrypt("HELLO");
             var decryptStr = caesarCipher.Decrypt(encryptStr);
 
-            Console.WriteLine("암호화:" + encryptStr);
-            Console.WriteLine("복호화:" + decryptStr);
+            Console.WriteLine("Caesar 암호화:" + encryptStr);
+            Console.WriteLine("Caesar 복호화:" + decryptStr);
+
+            var encryptRot13Str = ROT13Cipher.Encrypt("HELLO");
+            var decryptRot13Str = ROT13Cipher.Decrypt(encryptStr);
+
+            Console.WriteLine("ROT13 암호화:" + encryptRot13Str);
+            Console.WriteLine("ROT13 복호화:" + decryptRot13Str);
         }
 
     }
