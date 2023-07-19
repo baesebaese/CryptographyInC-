@@ -64,6 +64,6 @@ namespace Cipher.Substitution_Cipher
             Debug.Assert(message == plain);
 
         }
-
+ 
     }
 }

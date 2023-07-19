@@ -38,6 +38,14 @@ namespace Cipher
 
             Console.WriteLine("곱셈 암호화:" + encryptMulti);
             Console.WriteLine("곱셈 복호화:" + decryptMulti);
+
+            var affine = new AffineCipher(7, 5);
+            var encryptAffine = affine.Encrypt("HELLO");
+            var decryptAffine = affine.Decrypt(encryptAffine);
+
+            Console.WriteLine("아핀 암호화:" + encryptAffine);
+            Console.WriteLine("아핀 복호화:" + decryptAffine);
+
         }
 
     }
