@@ -1,4 +1,5 @@
-﻿using Cipher.Substitution_Cipher;
+﻿using Cipher.Poly_Substitution_Cipher;
+using Cipher.Substitution_Cipher;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,12 @@ namespace Cipher
 
             Console.WriteLine("아핀 암호화:" + encryptAffine);
             Console.WriteLine("아핀 복호화:" + decryptAffine);
+
+            var encryptvigenere = VigenereCipher.Encrypt("HELLO", "BOB");
+            var decryptVigenere = VigenereCipher.Decrypt(encryptvigenere, "BOB");
+
+            Console.WriteLine("비제네르 암호화:" + encryptvigenere);
+            Console.WriteLine("비제네르 복호화:" + decryptVigenere);
 
         }
 
